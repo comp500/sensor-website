@@ -8,5 +8,5 @@ handlers:
 - url: /index\.html
   script: index.php
 
-- url: /.*
+- url: /static
   static_dir: static

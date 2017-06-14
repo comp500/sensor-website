@@ -13,10 +13,10 @@
 	<title>PiWeather</title>
 
 	<!-- Bootstrap core CSS -->
-	<link href="src/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 
 	<!-- Custom styles for this template -->
-	<link href="src/style.css" rel="stylesheet">
+	<link href="static/style.css" rel="stylesheet">
 
 </head>
 
@@ -88,8 +88,10 @@
 			<p class="text-muted">Source code on <a href="https://github.com/comp500/sensor-reporter">GitHub</a>{if isset($commitHash)}<br>Running git commit <a href="https://github.com/comp500/sensor-reporter/commit/{$commitHash}">{$commitHash}</a>{/if}</p>
 		</div>
 	</footer>
-	<script defer src="src/js/Chart.bundle.min.js"></script>
-	<script defer src="src/graphloader.js"></script>
+	{if $ready}
+	<script defer src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.min.js" integrity="sha256-VNbX9NjQNRW+Bk02G/RO6WiTKuhncWI4Ey7LkSbE+5s=" crossorigin="anonymous"></script>
+	<script defer src="static/graphloader.js"></script>
+	{/if}
 </body>
 
 </html>
