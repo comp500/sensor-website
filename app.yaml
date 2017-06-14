@@ -7,6 +7,9 @@ handlers:
 
 - url: /index\.html
   script: index.php
+  
+- url: /exports
+  script: exports.php
 
 - url: /static
   static_dir: static
