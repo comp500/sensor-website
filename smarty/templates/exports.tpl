@@ -1,5 +1,8 @@
 {extends file="skeleton.tpl"}
 {block name=body}
-	<p>Not implemented yet.</p>
+	<div class="container">
+		<p>Not implemented yet.</p>
+	</div>
 {/block}
 {block name=js}{/block}
+{assign "page" "exports"}

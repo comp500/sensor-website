@@ -23,13 +23,13 @@
 <body>
 
 	<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
-		<a class="navbar-brand" href="#">RPi Weather Station</a>
+		<a class="navbar-brand" href="/">RPi Weather Station</a>
 		<ul class="navbar-nav mr-auto">
-			<li class="nav-item active">
-				<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+			<li class="nav-item{if $page == 'index'} active{/if}">
+				<a class="nav-link" href="/">Home{if $page == 'index'} <span class="sr-only">(current)</span>{/if}</a>
 			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="output.csv">Exports</a>
+			<li class="nav-item{if $page == 'exports'} active{/if}">
+				<a class="nav-link" href="/exports">Exports{if $page == 'exports'} <span class="sr-only">(current)</span>{/if}</a>
 			</li>
 		</ul>
 	</nav>
