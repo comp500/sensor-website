@@ -6,13 +6,13 @@
 			<div class="form-group row">
 				<label for="example-datetime-local-input" class="col-2 col-form-label">Start time</label>
 				<div class="col-10">
-					<input class="form-control" type="datetime-local" value="" id="example-datetime-local-input">
+					<input class="form-control" type="datetime-local" value="" name="start-time">
 				</div>
 			</div>
 			<div class="form-group row">
 				<label for="example-datetime-local-input" class="col-2 col-form-label">End time</label>
 				<div class="col-10">
-					<input class="form-control" type="datetime-local" value="" id="example-datetime-local-input">
+					<input class="form-control" type="datetime-local" value="" name="end-time">
 				</div>
 			</div>
 
@@ -20,13 +20,13 @@
 				<legend>Select format</legend>
 				<div class="form-check">
 					<label class="form-check-label">
-			<input type="radio" class="form-check-input" id="csv" value="csv" checked>
+			<input type="radio" class="form-check-input" name="output-format" value="csv" checked>
 			CSV
 		  </label>
 				</div>
 				<div class="form-check disabled">
 					<label class="form-check-label">
-			<input type="radio" class="form-check-input" id="json" value="json">
+			<input type="radio" class="form-check-input" name="output-format" value="json" disabled>
 			JSON
 		  </label>
 				</div>

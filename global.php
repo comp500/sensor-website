@@ -17,4 +17,10 @@ if (!isset($_SERVER['DEFAULT_VERSION_HOSTNAME'])) { // check if running on googl
 
 $obj_store = new GDS\Store('Measurement');
 
+$config = [
+	"0" => [
+		
+	]
+];
+
 ?>
