@@ -1,7 +1,7 @@
 {extends file="skeleton.tpl"}
 {block name=body}
 	<div class="container">
-		<form action="/" method="post">
+		<form method="post">
 			<legend>Make a choice</legend>
 			<div class="form-group row">
 				<label for="example-datetime-local-input" class="col-2 col-form-label">Start time</label>
