@@ -6,7 +6,7 @@ $smarty->assign('sensors', [
 	0 => [
 		'value' => '99.9',
 		'unit' => 'arb.',
-		'small' => true
+		'small' => true,
 		'measurement' => 'Arbitrary Units',
 		'location' => 'The Cloud',
 		'sensorID' => 0
