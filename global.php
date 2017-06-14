@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/vendor/autoload.php';
+
 $smarty = new Smarty(); // initialise smarty
 
 // set smarty directories
@@ -13,5 +14,7 @@ if (!isset($_SERVER['DEFAULT_VERSION_HOSTNAME'])) { // check if running on googl
 	$smarty->setCompileDir('gs://' . $_SERVER['DEFAULT_VERSION_HOSTNAME'] . '/smarty_tmp/templates_c/');
 	$smarty->setCacheDir('gs://' . $_SERVER['DEFAULT_VERSION_HOSTNAME'] . '/smarty_tmp/cache/');
 }
+
+$obj_store = new GDS\Store('Measurement');
 
 ?>
