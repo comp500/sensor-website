@@ -2,7 +2,9 @@
 require 'global.php';
 
 function outputCSV($data) {
-	echo "Temperature: {$data['0']}, Recorded: {$data['recorded']} <br />", PHP_EOL;
+	foreach($data as $obj_ent) {
+		echo "Temperature: {$obj_ent['0']}, Recorded: {$obj_ent['recorded']} <br />", PHP_EOL;
+	}
 }
 
 function processCaptcha() {
