@@ -1,0 +1,6 @@
+{
+	"require": {
+		"tomwalder/php-gds": "v3.*",
+		"smarty/smarty": "~3.1"
+	}
+}
