@@ -85,7 +85,7 @@
 	
 	<footer class="footer">
 		<div class="container">
-			<p class="text-muted">Source code on <a href="https://github.com/comp500/sensor-reporter">GitHub</a>{if isset($commitHash)}<br>Running git commit <a href="https://github.com/comp500/sensor-reporter/commit/{$commitHash}">{$commitHash}</a>{/if}</p>
+			<p class="text-muted">Source code on <a href="https://github.com/comp500/sensor-website">GitHub</a>{if isset($commitHash)}<br>Running git commit <a href="https://github.com/comp500/sensor-website/commit/{$commitHash}">{$commitHash}</a>{/if}</p>
 		</div>
 	</footer>
 	{if $ready}
