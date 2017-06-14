@@ -2,7 +2,7 @@
 require 'global.php';
 
 function outputCSV($data) {
-	//echo "Temperature: {$data['0']}, Recorded: {$data['recorded']} <br />", PHP_EOL;
+	echo "Temperature: {$data['0']}, Recorded: {$data['recorded']} <br />", PHP_EOL;
 }
 
 function processCaptcha() {
@@ -10,7 +10,7 @@ function processCaptcha() {
 	return true;
 }
 
-function queryData() {
+function queryData($obj_store) {
 	$dataArray = array();
 	foreach($obj_store->fetchAll() as $obj_ent) { // modify based on POST params
 		array_push($dataArray, $obj_ent->getData());
@@ -25,7 +25,7 @@ function validate() {
 if (!empty($_POST['g-recaptcha-response'])) {
 	if (processCaptcha()) {
 		if (validate()) {
-			$data = queryData();
+			$data = queryData($obj_store);
 			if ($_POST['output-format'] == 'csv') {
 				outputCSV($data);
 			} else {
