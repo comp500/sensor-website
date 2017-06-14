@@ -1,4 +1,4 @@
-{extends file="layout.tpl"}
+{extends file="skeleton.tpl"}
 {block name=body}
 	<p>Not implemented yet.</p>
 {/block}

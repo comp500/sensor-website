@@ -1,4 +1,4 @@
-{extends file="layout.tpl"}
+{extends file="skeleton.tpl"}
 {block name=body}
 	{if $ready}
 	<div class="alert alert-info" role="alert">
