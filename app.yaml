@@ -10,6 +10,9 @@ handlers:
   
 - url: /exports
   script: exports.php
+  
+- url: /csvtest
+  script: csvtest.php
 
 - url: /static
   static_dir: static
