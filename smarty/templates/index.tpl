@@ -1,39 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-	<meta name="description" content="">
-	<meta name="author" content="">
-	<link rel="icon" href="src/favicon.ico">
-	<!--<link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans|Ubuntu" rel="stylesheet"> not used yet-->
-	<title>PiWeather</title>
-
-	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-
-	<!-- Custom styles for this template -->
-	<link href="static/style.css" rel="stylesheet">
-
-</head>
-
-<body>
-
-	<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
-		<a class="navbar-brand" href="#">RPi Weather Station</a>
-		<ul class="navbar-nav mr-auto">
-			<li class="nav-item active">
-				<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="output.csv">Exports</a>
-			</li>
-		</ul>
-	</nav>
-	
+{extends file="layout.tpl"}
+{block name=body}
 	{if $ready}
 	<div class="alert alert-info" role="alert">
 		<strong>Heads up!</strong> This software could break at any time.
@@ -82,16 +48,8 @@
 		<a href="/"><h2>Click to refresh</h2></a>
 	</div>
 	{/if}
-	
-	<footer class="footer">
-		<div class="container">
-			<p class="text-muted">Source code on <a href="https://github.com/comp500/sensor-website">GitHub</a>{if isset($commitHash)}<br>Running git commit <a href="https://github.com/comp500/sensor-website/commit/{$commitHash}">{$commitHash}</a>{/if}</p>
-		</div>
-	</footer>
-	{if $ready}
+{/block}
+{block name=js}
 	<script defer src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.min.js" integrity="sha256-VNbX9NjQNRW+Bk02G/RO6WiTKuhncWI4Ey7LkSbE+5s=" crossorigin="anonymous"></script>
 	<script defer src="static/graphloader.js"></script>
-	{/if}
-</body>
-
-</html>
+{/block}
