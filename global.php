@@ -6,12 +6,12 @@ $smarty = new Smarty(); // initialise smarty
 $smarty->setTemplateDir(__DIR__ . '/smarty/templates/');
 $smarty->setConfigDir(__DIR__ . '/smarty/configs/');
 
-if (getenv("GAE_INSTANCE") == false) { // check if running on google cloud
+if (!isset($_SERVER['DEFAULT_VERSION_HOSTNAME'])) { // check if running on google cloud
 	$smarty->setCompileDir(__DIR__ . '/smarty/templates_c/');
 	$smarty->setCacheDir(__DIR__ . '/smarty/cache/');
 } else { // use cloud storage for compile dirs
-	$smarty->setCompileDir('gs://' . getenv("GCLOUD_PROJECT") . '/smarty_tmp/templates_c/');
-	$smarty->setCacheDir('gs://' . getenv("GCLOUD_PROJECT") . '/smarty_tmp/cache/');
+	$smarty->setCompileDir('gs://' . $_SERVER['DEFAULT_VERSION_HOSTNAME'] . '/smarty_tmp/templates_c/');
+	$smarty->setCacheDir('gs://' . $_SERVER['DEFAULT_VERSION_HOSTNAME'] . '/smarty_tmp/cache/');
 }
 
 ?>
