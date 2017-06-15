@@ -86,8 +86,10 @@ if (!empty($_GET['q'])) {
 		$smarty->assign('titles', $titles);
 		$smarty->display('exporthtml.tpl');
 	} else if ($export->output == 'json') {
+		header('Content-Type: application/json');
 		outputJSON($data, $config);
 	} else {
+		header('Content-Type: text/csv');
 		outputCSV($data, $titles); // default to csv output
 	}
 } else {
