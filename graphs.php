@@ -53,7 +53,7 @@ for ($i = 0; $i < $dataLength; $i++) {
 if ($dataLength < $graphLength) {
 	foreach($output["values"] as $key => &$value) {
 		while (count($value) < ($graphLength / 5)) {
-			
+			array_unshift($value, NULL);
 		}
 	}
 }
