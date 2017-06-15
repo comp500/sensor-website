@@ -7,7 +7,7 @@ function outputCSV($data, $titles) {
 	for ($i = 0; $i < $titlesLength; $i++) {
 		echo "," . $titles[$i];
 	}
-	echo "\n";
+	echo PHP_EOL;
 	foreach($data as $obj_ent) {
 		echo $obj_ent['recorded'];
 		foreach ($obj_ent as $key => $value) {
@@ -17,7 +17,7 @@ function outputCSV($data, $titles) {
 				echo "," . $value;
 			}
 		}
-		echo "\n";
+		echo PHP_EOL;
 	}
 }
 

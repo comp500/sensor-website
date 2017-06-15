@@ -47,9 +47,9 @@
 						CSV (for Excel)
 					</label>
 				</div>
-				<div class="form-check disabled">
+				<div class="form-check">
 					<label class="form-check-label">
-						<input type="radio" class="form-check-input" name="output-format" value="json" disabled>
+						<input type="radio" class="form-check-input" name="output-format" value="json">
 						JSON (for custom programs)
 					</label>
 				</div>
