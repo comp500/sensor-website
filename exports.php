@@ -25,7 +25,7 @@ if (!empty($_POST['g-recaptcha-response'])) {
 				'asc' => ($_POST['sort'] == 'asc'),
 				'output' => $_POST['output-format']
 			]);
-			$export_store->insert($export_ent);
+			$export_store->upsert($export_ent);
 			header('Location: /exports/download.' . $_POST['output-format'] . '?q=' . $id);
 			exit;
 		} else {
