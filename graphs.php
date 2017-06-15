@@ -39,9 +39,6 @@ for ($i = 0; $i < $dataLength; $i++) {
 		if (!isset($config[$key])) {
 			// ignore
 		} else if (isset($average[$key])) {
-			if ($key == "4") {
-				syslog(LOG_INFO, json_encode($average));
-			}
 			array_push($average[$key], floatval($value));
 		}
 	}
