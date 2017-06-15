@@ -11,11 +11,11 @@ function outputCSV($data, $titles) {
 	foreach($data as $obj_ent) {
 		echo $obj_ent['recorded'];
 		foreach ($obj_ent as $key => $value) {
-			if ($key == 'recorded') {
+			//if ($key == 'recorded') {
 				// ignore
-			} else {
+			//} else {
 				echo "," . $value;
-			}
+			//}
 		}
 		echo PHP_EOL;
 	}
