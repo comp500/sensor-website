@@ -39,7 +39,7 @@ for ($i = 0; $i < $dataLength; $i++) {
 		if (!isset($config[$key])) {
 			// ignore
 		} else if (isset($average[$key])) {
-			if ($key = "4") {
+			if ($key == "4") {
 				syslog(LOG_INFO, json_encode($average));
 			}
 			array_push($average[$key], floatval($value));
@@ -48,7 +48,7 @@ for ($i = 0; $i < $dataLength; $i++) {
 	if (($i % 5) == 4) { // every 5 minutes
 		foreach($average as $key => $value) {
 			$output["values"][$key][] = (array_sum($value) / 5);
-			$average[$value] = [];
+			$average[$key] = [];
 		}
 	}
 }
