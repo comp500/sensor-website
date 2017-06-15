@@ -1,25 +1,22 @@
 {extends file="skeleton.tpl"}
 {block name=body}
 	<div class="container">
-		<a href="/exports" class="btn btn-outline-primary mt-4">Go back</button>
+		<a href="/exports" class="btn btn-outline-primary mt-4">Go back</a>
 		<h1>Recorded data export</h1>
-		<table class="table">
+		<table class="table table-striped">
 			<thead>
 				<tr>
-					{foreach $titles as $title}<th>{$title}</th>
-					{/foreach}<th>Date Recorded</th>
+					{foreach $titles as $title}<td>{$title}</td>{/foreach}<td>Date Recorded</td>
 				</tr>
 			</thead>
 			<tbody>
 				{foreach $data as $entity}
 					<tr>
-						{foreach $entity as $value}<th>{$value}</th>
-						{/foreach}
+						{foreach $entity as $value}<td>{$value}</td>{/foreach}
 					</tr>
 				{/foreach}
 			</tbody>
 		</table>
 	</div>
 {/block}
-{block name=js}{/block}
 {assign "page" "exports"}

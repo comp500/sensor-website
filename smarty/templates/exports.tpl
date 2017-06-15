@@ -16,7 +16,23 @@
 				<input class="form-control" type="number" placeholder="MM" min="1" max="12" name="end-time-month">
 				<input class="form-control" type="number" placeholder="DD" min="1" max="31" name="end-time-day">
 			</div>
-
+			
+			<fieldset class="form-group">
+				<legend>Select sort order</legend>
+				<div class="form-check">
+					<label class="form-check-label">
+						<input type="radio" class="form-check-input" name="sort" value="desc" checked>
+						Descending (newest to oldest)
+					</label>
+				</div>
+				<div class="form-check">
+					<label class="form-check-label">
+						<input type="radio" class="form-check-input" name="sort" value="asc">
+						Ascending (oldest to newest)
+					</label>
+				</div>
+			</fieldset>
+			
 			<fieldset class="form-group">
 				<legend>Select format</legend>
 				<div class="form-check">
