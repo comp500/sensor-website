@@ -36,6 +36,7 @@ window.addEventListener("load", function(event) {
 				},
 				options: {
 					responsive: true,
+					pointRadius: 0,
 					tooltips: {
 						mode: 'index',
 						intersect: false,
