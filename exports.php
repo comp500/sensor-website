@@ -13,7 +13,7 @@ function processCaptcha() {
 }
 
 function queryData($obj_store) {
-	$dataArray = array();
+	$dataArray = [];
 	foreach($obj_store->fetchAll() as $obj_ent) { // modify based on POST params
 		array_push($dataArray, $obj_ent->getData());
 	}
