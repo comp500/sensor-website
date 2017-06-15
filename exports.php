@@ -1,7 +1,7 @@
 <?php
 require_once 'global.php';
 
-function outputCSV($data) {
+function outputCSV($data, $titles) {
 	foreach($data as $obj_ent) {
 		echo "Temperature: {$obj_ent['0']}, Recorded: {$obj_ent['recorded']} <br />", PHP_EOL;
 	}
@@ -28,10 +28,16 @@ if (!empty($_POST['g-recaptcha-response'])) {
 	if (processCaptcha()) {
 		if (validate()) {
 			$data = queryData($obj_store);
-			if ($_POST['output-format'] == 'csv') {
-				outputCSV($data);
+			$titles = [];
+			foreach($config as $key => $value) {
+				$titles[] = $value["measurement"];
+			}
+			if ($_POST['output-format'] == 'html') {
+				$smarty->assign('data', $data);
+				$smarty->assign('titles', $titles);
+				$smarty->display('exporthtml.tpl');
 			} else {
-				// unexpected, not caught by validation
+				outputCSV($data, $titles); // default to csv output
 			}
 		} else {
 			// redirect to error page?

@@ -21,14 +21,14 @@
 				<legend>Select format</legend>
 				<div class="form-check">
 					<label class="form-check-label">
-						<input type="radio" class="form-check-input" name="output-format" value="csv" checked>
-						CSV (for Excel)
+						<input type="radio" class="form-check-input" name="output-format" value="html" checked>
+						HTML (for easy viewing)
 					</label>
 				</div>
-				<div class="form-check disabled">
+				<div class="form-check">
 					<label class="form-check-label">
-						<input type="radio" class="form-check-input" name="output-format" value="html" disabled>
-						HTML (for easy viewing)
+						<input type="radio" class="form-check-input" name="output-format" value="csv">
+						CSV (for Excel)
 					</label>
 				</div>
 				<div class="form-check disabled">
