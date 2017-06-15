@@ -2,16 +2,20 @@
 require_once 'global.php';
 
 function outputCSV($data, $titles) {
-	echo "Time";
 	$titlesLength = count($titles);
+	echo "Time";
 	for ($i = 0; $i < $titlesLength; $i++) {
 		echo "," . $titles[i];
 	}
 	echo PHP_EOL;
 	foreach($data as $obj_ent) {
 		echo $obj_ent['recorded'];
-		for ($i = 0; $i < $titlesLength; $i++) {
-			echo "," . $obj_ent[(string)$i];
+		foreach ($obj_ent as $key => $value) {
+			if ($key == 'recorded') {
+				// ignore
+			} else {
+				echo "," . $value;
+			}
 		}
 		echo PHP_EOL;
 	}
