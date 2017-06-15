@@ -5,9 +5,9 @@ function outputCSV($data, $titles) {
 	$titlesLength = count($titles);
 	echo "Time";
 	for ($i = 0; $i < $titlesLength; $i++) {
-		echo "," . $titles[i];
+		echo "," . $titles[$i];
 	}
-	echo PHP_EOL;
+	echo "\n";
 	foreach($data as $obj_ent) {
 		echo $obj_ent['recorded'];
 		foreach ($obj_ent as $key => $value) {
@@ -17,8 +17,25 @@ function outputCSV($data, $titles) {
 				echo "," . $value;
 			}
 		}
-		echo PHP_EOL;
+		echo "\n";
 	}
+}
+
+function outputJSON($data, $config) {
+	$output = [
+		"metadata" => [],
+		"data" => $data
+	];
+	foreach($config as $key => $value) {
+		$output["metadata"][] = [
+			"unit" => $value["unit"],
+			"measurement" => $value["measurement"],
+			"min" => $value["graphMin"],
+			"max" => $value["graphMax"],
+			"sensorID" => $key
+		];
+	}
+	echo json_encode($output);
 }
 
 function processCaptcha() {
@@ -60,6 +77,8 @@ if (!empty($_POST['g-recaptcha-response'])) {
 				$smarty->assign('dataLength', count($data));
 				$smarty->assign('titles', $titles);
 				$smarty->display('exporthtml.tpl');
+			} else if ($_POST['output-format'] == 'json') {
+				outputJSON($data, $config);
 			} else {
 				outputCSV($data, $titles); // default to csv output
 			}
