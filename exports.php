@@ -43,6 +43,7 @@ if (!empty($_POST['g-recaptcha-response'])) {
 			}
 			if ($_POST['output-format'] == 'html') {
 				$smarty->assign('data', $data);
+				$smarty->assign('dataLength', count($data));
 				$smarty->assign('titles', $titles);
 				$smarty->display('exporthtml.tpl');
 			} else {

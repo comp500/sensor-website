@@ -3,6 +3,7 @@
 	<div class="container">
 		<a href="/exports" class="btn btn-outline-primary mt-4">Go back</a>
 		<h1>Recorded data export</h1>
+		<p class="text-right"><em>{$dataLength} rows</em></p>
 		<table class="table table-striped">
 			<thead>
 				<tr>
@@ -10,11 +11,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				{foreach $data as $entity}
-					<tr>
-						{foreach $entity as $value}<td>{$value}</td>{/foreach}
-					</tr>
-				{/foreach}
+				{foreach $data as $entity}<tr>{foreach $entity as $value}<td>{$value}</td>{/foreach}</tr>{/foreach}
 			</tbody>
 		</table>
 	</div>
