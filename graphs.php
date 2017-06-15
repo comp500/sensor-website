@@ -39,7 +39,7 @@ for ($i = 0; $i < $dataLength; $i++) {
 		if (!isset($config[$key])) {
 			// ignore
 		} else if (isset($average[$key])) {
-			$average[$key][] = floatval($value);
+			array_push($average[$key], floatval($value));
 		}
 	}
 	if (($i % 5) == 4) { // every 5 minutes
