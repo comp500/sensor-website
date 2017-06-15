@@ -74,7 +74,7 @@ EOD
 $latest = [];
 foreach($config as $key => $value) {
 	$sensor = [
-		"value" => "99"
+		"value" => "99",
 		"unit" => $value["unit"],
 		"measurement" => $value["measurement"],
 		"location" => $value["location"],
