@@ -16,6 +16,10 @@ handlers:
   
 - url: /data.json
   script: graphs.php
+  
+- url: /cron/(.+)
+  script: cronjobs/\1.php
+  login: admin
 
 - url: /static
   static_dir: static

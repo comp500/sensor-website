@@ -1,0 +1,4 @@
+cron:
+- description: "Clear old export IDs"
+  url: /cron/clearexports
+  schedule: every day 00:00
