@@ -11,6 +11,9 @@ handlers:
 - url: /exports
   script: exports.php
   
+- url: /exports/download\..+
+  script: exportsdownload.php
+  
 - url: /data.json
   script: graphs.php
 
