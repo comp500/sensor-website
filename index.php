@@ -10,7 +10,7 @@ foreach($config as $key => $value) {
 		"location" => $value["location"],
 		"sensorID" => $key
 	];
-	if ($value["small"]) {
+	if (isset($value["small"]) && $value["small"]) {
 		$sensor["small"] = true;
 	}
 	$templateData[] = $sensor;
