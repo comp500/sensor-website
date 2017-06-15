@@ -9,7 +9,7 @@ function queryData($obj_store, $limit) {
 	foreach($data as $obj_ent) {
 		array_push($dataArray, $obj_ent->getData());
 	}
-	return $dataArray;
+	return array_reverse($dataArray);
 }
 
 $output = [
