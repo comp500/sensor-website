@@ -71,7 +71,7 @@ if (!empty($_GET['q'])) {
 		exit;
 	}
 	
-	if ($export['sort'] == "asc") {
+	if ($export->sort == "asc") {
 		$data = queryData($obj_store, true);
 	} else {
 		$data = queryData($obj_store, false);
@@ -80,12 +80,12 @@ if (!empty($_GET['q'])) {
 	foreach($config as $key => $value) {
 		$titles[] = $value["measurement"];
 	}
-	if ($export['output'] == 'html') {
+	if ($export->output == 'html') {
 		$smarty->assign('data', $data);
 		$smarty->assign('dataLength', count($data));
 		$smarty->assign('titles', $titles);
 		$smarty->display('exporthtml.tpl');
-	} else if ($export['output'] == 'json') {
+	} else if ($export->output == 'json') {
 		outputJSON($data, $config);
 	} else {
 		outputCSV($data, $titles); // default to csv output
