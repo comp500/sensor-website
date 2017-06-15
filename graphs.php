@@ -39,6 +39,9 @@ for ($i = 0; $i < $dataLength; $i++) {
 		if (!isset($config[$key])) {
 			// ignore
 		} else if (isset($average[$key])) {
+			syslog(LOG_INFO, $key);
+			syslog(LOG_INFO, $average[$key]);
+			syslog(LOG_INFO, var_dump($average));
 			array_push($average[$key], floatval($value));
 		}
 	}
