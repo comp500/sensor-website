@@ -12,7 +12,7 @@ foreach($config as $key => $value) {
 		"measurement" => $value["measurement"],
 		"min" => $value["graphMin"],
 		"max" => $value["graphMax"],
-		"sensorID" => $key,
+		"sensorID" => $key
 	];
 	$output["values"][$key] = [];
 	for ($i = 0; $i < 40; $i++) {

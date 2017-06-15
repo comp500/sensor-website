@@ -71,15 +71,19 @@ $config = json_decode(<<<EOD
 EOD
 , true);
 
-$latest = [
-	0 => [
-		'value' => '99.9',
-		'unit' => 'arb.',
-		'small' => true,
-		'measurement' => 'Arbitrary Units',
-		'location' => 'The Cloud',
-		'sensorID' => 0
-	]
-];
+$latest = [];
+foreach($config as $key => $value) {
+	$sensor = [
+		"value" => "99"
+		"unit" => $value["unit"],
+		"measurement" => $value["measurement"],
+		"location" => $value["location"],
+		"sensorID" => $key
+	];
+	if ($value["small"]) {
+		$sensor["small"] = true;
+	}
+	$latest[] = $sensor;
+}
 
 ?>
