@@ -7,7 +7,7 @@ function processCaptcha() {
 }
 
 function validate() {
-	return true;
+	return true; // TODO check output format, asc/desc, date validity etc
 }
 
 if (!empty($_POST['g-recaptcha-response'])) {
@@ -19,7 +19,7 @@ if (!empty($_POST['g-recaptcha-response'])) {
 				'output' => $_POST['output-format']
 			]);*/
 			$id = uniqid();
-			$export_ent = $obj_book_store->createEntity([
+			$export_ent = $export_store->createEntity([
 				'id' => $id,
 				'time' => new DateTime(),
 				'asc' => ($_POST['sort'] == 'asc'),
