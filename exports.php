@@ -42,5 +42,3 @@ if (!empty($_POST['g-recaptcha-response'])) {
 } else {
 	$smarty->display('exports.tpl');
 }
-
-?>
