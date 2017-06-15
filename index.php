@@ -1,5 +1,5 @@
 <?php
-require 'global.php';
+require_once 'global.php';
 
 $smarty->assign('ready', true);
 $smarty->assign('sensors', $latest);

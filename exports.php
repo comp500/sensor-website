@@ -1,5 +1,5 @@
 <?php
-require 'global.php';
+require_once 'global.php';
 
 function outputCSV($data) {
 	foreach($data as $obj_ent) {
