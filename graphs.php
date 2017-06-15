@@ -38,9 +38,7 @@ for ($i = 0; $i < $dataLength; $i++) {
 	foreach($data[$i] as $key => $value) {
 		if (!isset($config[$key])) {
 			// ignore
-		} else if (!is_numeric($key)) {
-			// ignore
-		} else {
+		} else if (isset($average[$key])) {
 			$average[$key][] = floatval($value);
 		}
 	}
