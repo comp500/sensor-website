@@ -31,7 +31,6 @@ foreach($config as $key => $value) {
 	];
 	$output["values"][$key] = [];
 	$average[$key] = [];
-	syslog(LOG_INFO, $average[$key]);
 }
 
 $dataLength = count($data);
@@ -40,14 +39,16 @@ for ($i = 0; $i < $dataLength; $i++) {
 		if (!isset($config[$key])) {
 			// ignore
 		} else if (isset($average[$key])) {
-			syslog(LOG_INFO, json_encode($average));
+			if ($key = "4") {
+				syslog(LOG_INFO, json_encode($average));
+			}
 			array_push($average[$key], floatval($value));
 		}
 	}
 	if (($i % 5) == 4) { // every 5 minutes
-		foreach($average as $key => &$value) {
+		foreach($average as $key => $value) {
 			$output["values"][$key][] = (array_sum($value) / 5);
-			$value = [];
+			$average[$value] = [];
 		}
 	}
 }
