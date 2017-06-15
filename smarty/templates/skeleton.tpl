@@ -8,7 +8,7 @@
 	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 	<meta name="description" content="">
 	<meta name="author" content="">
-	<link rel="icon" href="static/favicon.ico">
+	<link rel="icon" href="/static/favicon.ico">
 	<!--<link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans|Ubuntu" rel="stylesheet"> not used yet-->
 	<title>{block name=title}PiWeather{/block}</title>
 
@@ -16,7 +16,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 
 	<!-- Custom styles for this template -->
-	<link href="static/style.css" rel="stylesheet">
+	<link href="/static/style.css" rel="stylesheet">
 
 </head>
 
