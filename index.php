@@ -1,16 +1,7 @@
 <?php
 require_once 'global.php';
 
-function queryData($obj_store) {
-	$data = $obj_store->fetchAll("SELECT * FROM Measurement ORDER BY recorded DESC LIMIT 1");
-	$dataArray = [];
-	foreach($data as $obj_ent) {
-		array_push($dataArray, $obj_ent->getData());
-	}
-	return array_reverse($dataArray);
-}
-
-$data = queryData($obj_store);
+$data = $obj_store->fetchOne("SELECT * FROM Measurement ORDER BY recorded DESC")->getData();
 $templateData = [];
 foreach($config as $key => $value) {
 	$liveval = 0;
