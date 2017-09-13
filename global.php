@@ -3,7 +3,7 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 $smarty = new Smarty(); // initialise smarty
 
-$smarty->assign('commitHash', 'do not click this');
+//$smarty->assign('commitHash', 'do not click this');
 
 // set smarty directories
 $smarty->setTemplateDir(__DIR__ . '/smarty/templates/');
