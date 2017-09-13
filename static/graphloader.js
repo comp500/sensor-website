@@ -48,11 +48,18 @@ window.addEventListener("load", function(event) {
 					scales: {
 						xAxes: [{
 							display: true,
+							// type: 'time',
+							distribution: 'series',
 							scaleLabel: {
 								display: true,
 								labelString: 'Time (Mins ago)',
 								fontFamily: "sans-serif"
-							}
+							},
+							/*
+							time: {
+                    						unit: 'minute'
+                					}
+							*/
 						}],
 						yAxes: [{
 							display: true,
