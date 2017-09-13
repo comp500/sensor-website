@@ -44,7 +44,7 @@ for ($i = 0; $i < $dataLength; $i++) {
 	}
 	if (($i % 5) == 4) { // every 5 minutes
 		foreach($average as $key => $value) {
-			$output["values"][$key][] = (array_sum($value) / 5);
+			$output["values"][$key][] = round((array_sum($value) / 5), $config[$key]["graphDecimal"]));
 			$average[$key] = [];
 		}
 	}
