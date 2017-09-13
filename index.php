@@ -6,7 +6,7 @@ $templateData = [];
 foreach($config as $key => $value) {
 	$liveval = 0;
 	if (isset($data[$key])) {
-		$liveval = $data[$key];
+		$liveval = round(floatval($data[$key]), $value["htmlDecimal"]);
 	}
 	$sensor = [
 		"value" => $liveval,
@@ -23,5 +23,5 @@ foreach($config as $key => $value) {
 
 $smarty->assign('ready', true);
 $smarty->assign('sensors', $templateData);
-$smarty->assign('measurementTime', 2);
+$smarty->assign('measurementTime', 0);
 $smarty->display('index.tpl');
