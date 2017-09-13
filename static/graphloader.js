@@ -54,7 +54,7 @@ window.addEventListener("load", function(event) {
 								display: true,
 								labelString: 'Time (Mins ago)',
 								fontFamily: "sans-serif"
-							},
+							}
 							/*
 							time: {
                     						unit: 'minute'
