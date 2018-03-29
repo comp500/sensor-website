@@ -1,24 +1,3 @@
-/*window.chartColors = { // replace with colours in code?
-	red: 'rgb(255, 99, 132)',
-	orange: 'rgb(255, 159, 64)',
-	yellow: 'rgb(255, 205, 86)',
-	green: 'rgb(75, 192, 192)',
-	blue: 'rgb(54, 162, 235)',
-	purple: 'rgb(153, 102, 255)',
-	grey: 'rgb(231,233,237)'
-};*/
-
-window.chartColors = [
-	'rgb(255, 99, 132)',
-	'rgb(255, 159, 64)',
-	'rgb(255, 205, 86)',
-	'rgb(75, 192, 192)',
-	'rgb(54, 162, 235)',
-	'rgb(153, 102, 255)',
-	'rgb(231,233,237)'
-];
-
-
 window.addEventListener("load", function(event) {
 	var currentSeconds = parseInt(document.getElementsByClassName("measurementTime")[0].innerText);
 	window.setInterval(function () {
@@ -39,8 +18,8 @@ window.addEventListener("load", function(event) {
 					labels: ["-195", "-190", "-185", "-180", "-175", "-170", "-165", "-160", "-155", "-150", "-145", "-140", "-135", "-130", "-125", "-120", "-115", "-110", "-105", "-100", "-95", "-90", "-85", "-80", "-75", "-70", "-65", "-60", "-55", "-50", "-45", "-40", "-35", "-30", "-25", "-20", "-15", "-10", "-5", "0"],
 					datasets: [{
 						label: meta.measurement + " (" + meta.unit + ")",
-						backgroundColor: window.chartColors[i],
-						borderColor: window.chartColors[i],
+						backgroundColor: meta.color,
+						borderColor: meta.color,
 						data: ajaxdata.values[meta.sensorID],
 						fill: false
 					}]

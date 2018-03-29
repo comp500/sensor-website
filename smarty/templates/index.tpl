@@ -25,7 +25,9 @@
 			<div class="col-md-3">
 				<div class="card sensor-card">
 					<div class="card-block text-center">
-						<h1 class="display-3">{$sensor.value}{if isset($sensor.small) && $sensor.small}<strong class="small-unit">{$sensor.unit}</strong>{else}{$sensor.unit}{/if}</h1>
+						<h1 class="display-3" style="color: {$sensor.color}">
+						{$sensor.value}{if isset($sensor.small) && $sensor.small}<strong class="small-unit">{$sensor.unit}</strong>{else}{$sensor.unit}{/if}
+						</h1>
 						<p class="lead">{$sensor.measurement}</p>
 						<hr>
 						<p class="lead">{$sensor.location}</p>

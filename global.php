@@ -30,7 +30,8 @@ $config = json_decode(<<<EOD
 		"location": "Geography office",
 		"htmlDecimal": 1,
 		"graphMin": 0,
-		"graphMax": 35
+		"graphMax": 35,
+		"color": "#F44336"
 	},
 	"1": {
 		"graphDecimal": 0,
@@ -41,7 +42,8 @@ $config = json_decode(<<<EOD
 		"location": "Geography office",
 		"htmlDecimal": 1,
 		"graphMin": 10,
-		"graphMax": 95
+		"graphMax": 95,
+		"color": "#FF9800"
 	},
 	"2": {
 		"graphDecimal": 0,
@@ -53,7 +55,8 @@ $config = json_decode(<<<EOD
 		"location": "Geography office",
 		"htmlDecimal": 0,
 		"graphMin": 990,
-		"graphMax": 1040
+		"graphMax": 1040,
+		"color": "#9C27B0"
 	},
 	"4": {
 		"graphDecimal": 0,
@@ -65,7 +68,8 @@ $config = json_decode(<<<EOD
 		"location": "Geography office",
 		"htmlDecimal": 0,
 		"graphMin": 0,
-		"graphMax": 65535
+		"graphMax": 65535,
+		"color": "#2196F3"
 	}
 }
 EOD
