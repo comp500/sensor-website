@@ -1,22 +1,22 @@
 {extends file="skeleton.tpl"}
 {block name=body}
 	{if $ready}
-	{if $confdata.alert}
+	{if isset($confdata.alert)}
 	<div class="alert alert-info" role="alert">
-		{if $confdata.alertbold}<strong>{$confdata.alertbold}</strong> {/if}{$confdata.alert}
+		{if isset($confdata.alertbold)}<strong>{$confdata.alertbold}</strong> {/if}{$confdata.alert}
 	</div>
 	{/if}
 	<div class="container">
-		{if $confdata.preface}
+		{if isset($confdata.preface)}
 		<div class="jumbotron">
-			{if $confdata.prefacetitle}<h1 class="display-4">{$confdata.prefacetitle}</h1>{/if}
+			{if isset($confdata.prefacetitle)}<h1 class="display-4">{$confdata.prefacetitle}</h1>{/if}
 			<p class="lead">{$confdata.preface}</p>
-			{if $confdata.prefacebutton}
+			{if isset($confdata.prefacebutton)}
 			<p class="lead">
 				<a class="btn btn-primary btn-lg" href="{$confdata.prefacehref}" role="button">{$confdata.prefacebutton}</a>
 			</p>
 			{/if}
-			{if $measurementTime}
+			{if isset($measurementTime)}
 			<p class="lead">
 				System status:
 					{if $measurementTime > 172800}
@@ -32,7 +32,7 @@
 			{/if}
 		</div>
 		{else}
-		{if $measurementTime}
+		{if isset($measurementTime)}
 			<p>
 				System status:
 					{if $measurementTime > 172800}
@@ -65,7 +65,7 @@
 			</div>
 			{/foreach}
 		</div>
-		{if $measurementTime}<p class="lead">
+		{if isset($measurementTime)}<p class="lead">
 			Data recorded <span class="measurementTime">{$measurementTime}</span> seconds ago
 		</p>{/if}
 		<h3>Graphs</h3>

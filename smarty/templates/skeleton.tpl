@@ -5,8 +5,8 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	
-	<title>{if $confdata.sitetitle}{$confdata.sitetitle}{else}RPi Weather Station{/if}</title>
+
+	<title>{if isset($confdata.sitetitle)}{$confdata.sitetitle}{else}RPi Weather Station{/if}</title>
 
 	<!-- Bootstrap core CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
@@ -19,7 +19,7 @@
 <body>
 
 	<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
-		<a class="navbar-brand" href="/">{if $confdata.sitetitle}{$confdata.sitetitle}{else}RPi Weather Station{/if}</a>
+		<a class="navbar-brand" href="/">{if isset($confdata.sitetitle)}{$confdata.sitetitle}{else}RPi Weather Station{/if}</a>
 		<ul class="navbar-nav mr-auto">
 			<li class="nav-item{if $page == 'index'} active{/if}">
 				<a class="nav-link" href="/">Home{if $page == 'index'} <span class="sr-only">(current)</span>{/if}</a>
@@ -38,8 +38,8 @@
 			{if $confdata.github}
 				Source code on <a href="https://github.com/comp500/sensor-website">GitHub</a>{if isset($commitHash)}<br>Running git commit <a href="https://github.com/comp500/sensor-website/commit/{$commitHash}">{$commitHash}</a>{/if}
 			{/if}
-			{if $confdata.foottext}
-				{$confdata.foottext}{if $confdata.footlink}<a href="{$confdata.foothref}">{$confdata.footlink}</a>{/if}
+			{if isset($confdata.foottext)}
+				{$confdata.foottext}{if isset($confdata.footlink)}<a href="{$confdata.foothref}">{$confdata.footlink}</a>{/if}
 			{/if}
 			</p>
 		</div>
