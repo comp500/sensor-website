@@ -1,9 +1,13 @@
 <?php
 require_once 'global.php';
 
-function processCaptcha() {
+function processCaptcha($conf_data) {
 	if (isset($conf_data) && !isset($conf_data["captchasecret"])) {
 		return false; // Just to be safe
+	}
+	if (!isset($conf_data)) {
+		return true; // If it wasn't set up properly
+		// log?
 	}
 
 	$post_data = http_build_query(
@@ -42,7 +46,7 @@ function validate() {
 }
 
 if (!empty($_POST['g-recaptcha-response'])) {
-	if (processCaptcha()) {
+	if (processCaptcha($conf_data)) {
 		if (validate()) {
 			$export_store = new GDS\Store('Exports'); // TODO: cron job to clear old
 			/*$export_store->fetchOne("SELECT * FROM Exports WHERE ascending = @asc AND output-format = @output", [
