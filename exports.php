@@ -2,11 +2,42 @@
 require_once 'global.php';
 
 function processCaptcha() {
-	// no-op for now
+	if (isset($conf_data) && !isset($conf_data["captchasecret"])) {
+		return false; // Just to be safe
+	}
+
+	$post_data = http_build_query(
+		array(
+			'secret' => $conf_data["captchasecret"],
+			'response' => $_POST['g-recaptcha-response'],
+			'remoteip' => $_SERVER['REMOTE_ADDR']
+		)
+	);
+	$opts = array('http' =>
+		array(
+			'method'  => 'POST',
+			'header'  => 'Content-type: application/x-www-form-urlencoded',
+			'content' => $post_data
+		)
+	);
+	$context  = stream_context_create($opts);
+	$response = file_get_contents('https://www.google.com/recaptcha/api/siteverify', false, $context);
+	$result = json_decode($response);
+	if (!$result->success) {
+		return false;
+	}
+
 	return true;
 }
 
 function validate() {
+	if ($_POST['output-format'] != "csv" && $_POST['output-format'] != "json" && $_POST['output-format'] != "html") {
+		return false;
+	}
+
+	if ($_POST['sort'] != "asc" && $_POST['sort'] != "desc") {
+		return false;
+	}
 	return true; // TODO check output format, asc/desc, date validity etc
 }
 

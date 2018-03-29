@@ -38,11 +38,6 @@ function outputJSON($data, $config) {
 	echo json_encode($output);
 }
 
-function processCaptcha() {
-	// no-op for now
-	return true;
-}
-
 function queryData($obj_store, $ascending) {
 	$dataArray = [];
 	if ($ascending) {

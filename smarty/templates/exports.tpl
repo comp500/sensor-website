@@ -3,7 +3,7 @@
 	<div class="container">
 		<h1 class="mt-4">Export recorded data</h1>
 		<form method="post">
-			<legend>Select date range</legend>
+			<!--<legend>Select date range</legend>
 			<div class="form-group form-inline">
 				<label for="end-time-year" class="col-2 col-form-label">Start date</label>
 				<input class="form-control" type="number" placeholder="YYYY" min="2017" max="2100" name="start-time-year">
@@ -15,7 +15,7 @@
 				<input class="form-control" type="number" placeholder="YYYY" min="2017" max="2100" name="end-time-year">
 				<input class="form-control" type="number" placeholder="MM" min="1" max="12" name="end-time-month">
 				<input class="form-control" type="number" placeholder="DD" min="1" max="31" name="end-time-day">
-			</div>
+			</div>-->
 			
 			<fieldset class="form-group">
 				<legend>Select sort order</legend>

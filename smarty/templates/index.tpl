@@ -17,6 +17,21 @@
 			</p>
 			{/if}
 		</div>
+		{else}
+		{if $measurementTime}
+			<p>
+				System status:
+					{if $measurementTime > 172800}
+					<span class="text-danger">Broken (greater than two days since last recording)</span>
+					{elseif $measurementTime > 3600}
+					<span class="text-warning">Problematic (greater than one hour since last recording)</span>
+					{elseif $measurementTime > 300}
+					<span class="text-info">Slow (greater than 5 minutes since last recording)</span>
+					{else}
+					<span class="text-success">Fully operational</span>
+					{/if}
+			</p>
+		{/if}
 		{/if}
 
 		<h3>Latest data</h3>
