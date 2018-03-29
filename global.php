@@ -71,4 +71,7 @@ $config = json_decode(<<<EOD
 EOD
 , true);
 
+$conf_data = $obj_store->fetchOne("SELECT * FROM Configuration")->getData();
+$smarty->assign('confdata', $conf_data);
+
 ?>

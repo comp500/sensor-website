@@ -1,10 +1,24 @@
 {extends file="skeleton.tpl"}
 {block name=body}
 	{if $ready}
+	{if $confdata.alert}
 	<div class="alert alert-info" role="alert">
-		<strong>Heads up!</strong> This software could break at any time.
+		{if $confdata.alertbold}<strong>{$confdata.alertbold}</strong> {/if}{$confdata.alert}
 	</div>
+	{/if}
 	<div class="container">
+		{if $confdata.preface}
+		<div class="jumbotron">
+			{if $confdata.prefacetitle}<h1 class="display-4">{$confdata.prefacetitle}</h1>{/if}
+			<p class="lead">{$confdata.preface}</p>
+			{if $confdata.prefacebutton}
+			<p class="lead">
+				<a class="btn btn-primary btn-lg" href="{$confdata.prefacehref}" role="button">{$confdata.prefacebutton}</a>
+			</p>
+			{/if}
+		</div>
+		{/if}
+
 		<h3>Latest data</h3>
 		<div class="row">
 			{foreach $sensors as $sensor}
@@ -42,7 +56,7 @@
 	</div>
 	{else}
 	<div class="alert alert-warning" role="alert">
-		<strong>Warning!</strong> There is no data available yet.
+		<strong>Warning!</strong> There is no data available yet. The server may be starting, so please wait a few minutes and try again.
 	</div>
 	<div class="container">
 		<a href="/"><h2>Click to refresh</h2></a>
