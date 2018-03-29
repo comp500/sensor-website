@@ -13,7 +13,8 @@ foreach($config as $key => $value) {
 		"unit" => $value["unit"],
 		"measurement" => $value["measurement"],
 		"location" => $value["location"],
-		"sensorID" => $key
+		"sensorID" => $key,
+		"color" => $color
 	];
 	if (isset($value["small"]) && $value["small"]) {
 		$sensor["small"] = true;
