@@ -46,3 +46,7 @@
 	border: 0;
 	background-color: #eceeef;
 }
+
+.jumbotron {
+	margin-top: 2rem;
+}
