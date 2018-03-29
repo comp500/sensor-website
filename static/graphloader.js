@@ -1,12 +1,14 @@
 window.addEventListener("load", function(event) {
-	var currentSeconds = parseInt(document.getElementsByClassName("measurementTime")[0].innerText);
-	window.setInterval(function () {
-		currentSeconds++;
-		var timeElements = document.getElementsByClassName("measurementTime");
-		for (var i = 0; i < timeElements.length; i++) {
-			timeElements[i].innerText = currentSeconds;
-		}
-	}, 1000);
+	var timeElements = document.getElementsByClassName("measurementTime")
+	if (timeElements.length > 0) {
+		var currentSeconds = parseInt(timeElements[0].innerText);
+		window.setInterval(function () {
+			currentSeconds++;
+			for (var i = 0; i < timeElements.length; i++) {
+				timeElements[i].innerText = currentSeconds;
+			}
+		}, 1000);
+	}
 
 	// Set font stack
 	Chart.defaults.global.defaultFontFamily = '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
