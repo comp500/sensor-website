@@ -29,9 +29,8 @@
 }
 
 .graph-container {
-	width: 90%;
-	margin-left: 5%;
-	margin-bottom: 5%;
+	margin: auto;
+	margin-bottom: 1rem;
 }
 
 .small-unit {

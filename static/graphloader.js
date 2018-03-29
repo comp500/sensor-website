@@ -7,6 +7,9 @@ window.addEventListener("load", function(event) {
 			timeElements[i].innerText = currentSeconds;
 		}
 	}, 1000);
+
+	// Set font stack
+	Chart.defaults.global.defaultFontFamily = '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
 	
 	var createGraphs = function (ajaxdata) {
 		for (var i = 0; i < ajaxdata.metadata.length; i++) {
@@ -42,8 +45,7 @@ window.addEventListener("load", function(event) {
 							distribution: 'series',
 							scaleLabel: {
 								display: true,
-								labelString: 'Time (Mins ago)',
-								fontFamily: "sans-serif"
+								labelString: 'Time (Mins ago)'
 							}
 							/*
 							time: {
