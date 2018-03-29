@@ -28,7 +28,7 @@ foreach($config as $key => $value) {
 		"min" => $value["graphMin"],
 		"max" => $value["graphMax"],
 		"sensorID" => $key,
-		"color" => $color
+		"color" => $value["color"]
 	];
 	$output["values"][$key] = [];
 	$average[$key] = [];
