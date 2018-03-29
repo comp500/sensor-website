@@ -36,9 +36,9 @@
 			</div>
 			{/foreach}
 		</div>
-		<p class="lead">
+		{if $measurementTime}<p class="lead">
 			Data recorded <span class="measurementTime">{$measurementTime}</span> seconds ago
-		</p>
+		</p>{/if}
 		<h3>Graphs</h3>
 		<div class="row">
 			{foreach $sensors as $sensor}

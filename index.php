@@ -24,5 +24,5 @@ foreach($config as $key => $value) {
 
 $smarty->assign('ready', true);
 $smarty->assign('sensors', $templateData);
-$smarty->assign('measurementTime', 0);
+//$smarty->assign('measurementTime', 0);
 $smarty->display('index.tpl');
