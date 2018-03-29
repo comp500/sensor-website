@@ -22,7 +22,13 @@ foreach($config as $key => $value) {
 	$templateData[] = $sensor;
 }
 
+if (isset($data["recorded"])) {
+	$measurementTime = time() - strtotime($data["recorded"]);
+}
+
 $smarty->assign('ready', true);
 $smarty->assign('sensors', $templateData);
-//$smarty->assign('measurementTime', 0);
+if (isset($measurementTime) && $measurementTime > 0) {
+	$smarty->assign('measurementTime', $measurementTime);
+}
 $smarty->display('index.tpl');
